@@ -1,6 +1,6 @@
 
 import java.util.Random;
-import java.util.Scanner;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,11 +17,10 @@ b) Visualice la suma de sus filas.
 c) Ponga a 0 los elementos de la columna 7.*/
 public class Ejercicio2_1 {
 
-    static Scanner tec = new Scanner(System.in);
 
     public int[][] leerMatriz() {
 
-        int[][] m = new int[10][10];   // Modificar aqui para el rango del array, el ejercicio pide más, pero para comprobarlo pongo menos..
+        int[][] m = new int[10][10];   // Modificar aqui para el rango del array
         Random rnd = new Random();
         for (int i = 0; i < m.length; i++) {
 
@@ -41,15 +40,13 @@ public class Ejercicio2_1 {
         }
         
         
-        
-        
         return m;
     }
 
     public void verDiagonal(int[][] matriz) {
 
         
-        System.out.println("LISTA CON DIAGONALES");
+        System.out.println("\nLISTA CON DIAGONALES");
         for (int i = 0; i < matriz.length; i++) {
 
             for (int j = 0; j < matriz[i].length; j++) {
@@ -68,12 +65,13 @@ public class Ejercicio2_1 {
 
     public void sumaFilas(int[][] matriz) {
         int sum = 0;
+        System.out.println(""); // para dejarlo bonito
         for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
                 
                     sum += matriz[i][j];
             }
-            System.out.println("La suma de la fila " + i + " es de " + sum);    //imprimo por pantalla el resultado de cada fila
+            System.out.println("La suma de la fila " + (i+1) + " es de " + sum);    //imprimo por pantalla el resultado de cada fila
             sum = 0;  //reinicio
         }
         
@@ -82,25 +80,23 @@ public class Ejercicio2_1 {
     
     public void ponerAcero(int[][] matriz) {
     
-    for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; i++) {
-                if(j==6) {  // columna 7 es indice 6.
-                    
-                    matriz[i][j]=0;  // pongo a cero la columna 7
-                    
-                }
-            }
-                    
-            }
-        System.out.println("LISTA CON 0 EN LA SÉPTIMA COLUMNA");
-            for(int i = 0;i<matriz.length;i++) {
-                for (int j=0;i<matriz[i].length;j++){
-                    System.out.print(matriz[i][j] + "  ");
+    for (int i = 6; i < 7; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
                 
-                }
-            
-                  System.out.println("");
+                matriz[j][i]=0;  // pongo a cero la columna 7
+                    
+                
             }
+                    
+            }
+        System.out.println("\nLISTA CON 0 EN LA SÉPTIMA COLUMNA");
+            for (int i = 0; i < matriz.length; i++) {
+
+            for (int j = 0; j < matriz[i].length; j++) {
+                  System.out.print(matriz[i][j]+ "  ");
+            }
+            System.out.println("");
+        }
     
     
     }
