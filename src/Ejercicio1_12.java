@@ -1,4 +1,5 @@
 
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -26,11 +27,12 @@ public class Ejercicio1_12 {
     static int[] leerArray() {
 
         int[] listaNumeros = new int[10];   // Modificar aqui para el rango del array
-
+        Random rnd = new Random();
+        
         for (int i = 0; i < listaNumeros.length; i++) {
-
-            System.out.println("Dame el numero " + (i + 1));
-            listaNumeros[i] = tec.nextInt();
+            listaNumeros[i] = (int) (rnd.nextDouble() * 100 + 0);
+            //System.out.println("Dame el numero " + (i + 1));
+            //listaNumeros[i] = tec.nextInt();
 
         }
         System.out.println("LISTA ORIGINAL");           // visualizo para poder ver que esta todo bien al ejecutarlo..
@@ -115,7 +117,7 @@ public class Ejercicio1_12 {
     static public void imprimirBuscar(boolean aux) {
     
     if(aux==true) {
-        System.out.println("El número buscado SÍ está encuentra en la lista");
+        System.out.println("El número buscado SÍ se encuentra en la lista");
     }
     else {
         System.out.println("El número buscado NO está en la lista.");

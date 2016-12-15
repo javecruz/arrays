@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -21,15 +22,16 @@ Busca un valor en el array ordenado, utilizando la búsqueda binaria.*/
 public class Ejercicio1_12_Void {
 
     static Scanner tec = new Scanner(System.in);
-
+    
+    
     static int[] leerArray() {
-
+        Random rnd = new Random();
         int[] listaNumeros = new int[10];   // Modificar aqui para el rango del array
 
         for (int i = 0; i < listaNumeros.length; i++) {
-
-            System.out.println("Dame el numero " + (i + 1));
-            listaNumeros[i] = tec.nextInt();
+            listaNumeros[i] = (int) (rnd.nextDouble() * 100 + 0);
+            //System.out.println("Dame el numero " + (i + 1));
+            //listaNumeros[i] = tec.nextInt();
 
         }
         System.out.println("LISTA ORIGINAL");           // visualizo para poder ver que esta todo bien al ejecutarlo..
@@ -93,7 +95,7 @@ public class Ejercicio1_12_Void {
         System.out.println("Dame el número a buscar");
         int key = tec.nextInt();
 
-        while (high >= low) {
+        while (high >= low && encontrado==false) {
             int middle = (low + high) / 2;
             if (listaOrdenada[middle]==key) {
             encontrado = true;
