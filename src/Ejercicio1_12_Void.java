@@ -128,6 +128,7 @@ public class Ejercicio1_12_Void {
         arrayCorto(listaDeNumeros);
         int[] listaDeNumerosOrdenados = ordenarArrayOriginal(listaDeNumeros);
         buscarNumero(listaDeNumerosOrdenados);
+        
        
     }
 

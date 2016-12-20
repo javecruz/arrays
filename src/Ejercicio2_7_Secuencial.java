@@ -21,15 +21,17 @@ public class Ejercicio2_7_Secuencial {
         Scanner tec = new Scanner(System.in);
 
         for (int i = 0; i < nombres.length; i++) {
-            System.out.println("Dame nombre de " + i);
+            System.out.println("Dame nombre");
             nombres[i] = tec.nextLine();
 
             if (i > 0) {    // no entrará en el primer pues no hay con quien comparar
 
                 for (int j = 0; j < i; j++) { // sólo comprobará hasta el último indice indicado
                     if (nombres[i].equalsIgnoreCase(nombres[j])) {
-                        System.out.println("ERROR, Nombre ya introducido por favor vuelva a escribir otro distinto");
-                        nombres[i] = tec.nextLine();
+                        do {
+                            System.out.println("ERROR, Nombre ya introducido por favor vuelva a escribir otro distinto");
+                            nombres[i] = tec.nextLine();
+                        } while (nombres[i].equalsIgnoreCase(nombres[j]));
                     }
                 }
 
@@ -68,7 +70,7 @@ public class Ejercicio2_7_Secuencial {
             System.out.println(listaNombres[i]);
         }
 
-        System.out.println("\nDame el nombre a buscar");
+        System.out.println("\nDe quién quieres el número de telefono?");
         buscar = tec.nextLine();
 
         boolean sw = false;
